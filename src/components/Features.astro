@@ -1,75 +1,96 @@
 ---
-import Container from "./Container.astro"
+import Container from "./Container.astro";
 
 // Add a class named Tools that will contain information
 // about the tools that I use to create my content.
 
 type Tools = {
-  name: string
-  description: string
-  link: string
-  icon: string
-}
+  name: string;
+  description: string;
+  link: string;
+  icon: string;
+};
 
 const tools: Tools[] = [
   {
     name: "npropmter",
     description: "A web-based teleprompter that uses Notion as a backend.",
     link: "https://npropmter.vercel.app/",
-    icon: "https://ik.imagekit.io/thatcsharpguy/feregri_no/site/schedule.png?updatedAt=1692478001720"
+    icon: "https://ik.imagekit.io/thatcsharpguy/feregri_no/site/schedule.png?updatedAt=1692478001720",
   },
   {
     name: "B roller",
-    description: "A command-line tool to download video asset from YouTube and other sites.",
+    description:
+      "A command-line tool to download video asset from YouTube and other sites.",
     link: "https://npropmter.vercel.app/",
-    icon: "https://ik.imagekit.io/thatcsharpguy/feregri_no/site/asset.png?updatedAt=1692478001735"
-  }
-]
+    icon: "https://ik.imagekit.io/thatcsharpguy/feregri_no/site/asset.png?updatedAt=1692478001735",
+  },
+];
 
 const toolStyle = [
   "group relative bg-white dark:bg-gray-800 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10",
-  // "group relative bg-gray-50 dark:bg-gray-900 transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10"
-]
+];
 ---
 
 <div id="creator-tools">
   <Container>
     <div class="md:w-2/3 lg:w-3/2">
-      <h1 class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">Content creator <span class="text-primary dark:text-white">toolset.</span></h1>
-      <h2 class="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-3xl">
+      <h1
+        class="text-gray-900 dark:text-white font-bold text-4xl md:text-5xl xl:text-5xl"
+      >
+        Content creator <span class="text-primary dark:text-white"
+          >toolset.</span>
+      </h1>
+      <h2
+        class="my-3 text-1xl font-bold text-gray-700 dark:text-white md:text-2xl"
+      >
         A set of content creator tools that I use to create my content:
       </h2>
     </div>
     <div
       class="mt-8 grid divide-x divide-y divide-gray-100 dark:divide-gray-700 overflow-hidden rounded-3xl border border-gray-100 text-gray-600 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4"
     >
-      {tools.map((tool, idx)=> 
-        <div class={toolStyle.join(" ")}>
-        <div class="relative space-y-8 py-12 p-8">
-          <img
-            src={tool.icon}
-            class="w-12"
-            width="512"
-            height="512"
-            alt="burger illustration"
-          />
-          <div class="space-y-2">
-            <h5
-              class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary"
-            >
-              {tool.name}
-            </h5>
-            <p class="text-gray-600 dark:text-gray-300">{tool.description}</p>
+      {
+        tools.map((tool, idx) => (
+          <div class={toolStyle.join(" ")}>
+            <div class="relative space-y-8 py-12 p-8">
+              <img
+                src={tool.icon}
+                class="w-12"
+                width="512"
+                height="512"
+                alt="burger illustration"
+              />
+              <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-secondary">
+                  {tool.name}
+                </h5>
+                <p class="text-gray-600 dark:text-gray-300">
+                  {tool.description}
+                </p>
+              </div>
+              <a
+                href={tool.link}
+                class="flex items-center justify-between group-hover:text-secondary"
+              >
+                <span class="text-sm">Read more</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-          <a href={tool.link} class="flex items-center justify-between group-hover:text-secondary">
-            <span class="text-sm">Read more</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 -translate-x-4 text-2xl opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-              <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z" clip-rule="evenodd" />
-            </svg>                
-          </a>
-        </div>
-          </div>
-      )}
+        ))
+      }
     </div>
   </Container>
 </div>
