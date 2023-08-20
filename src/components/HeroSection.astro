@@ -1,6 +1,6 @@
 ---
 import Container from "./Container.astro";
-import { SOCIALS, SocialNetwork } from "../consts";
+import { SOCIALS, BIOGRAPHY, SocialNetwork } from "../consts";
 ---
 
 <div class="relative" id="home">
@@ -25,9 +25,7 @@ import { SOCIALS, SocialNetwork } from "../consts";
         >
           Antonio <span class="text-primary dark:text-white">Feregrino</span>
         </h1>
-        <p class="mt-6 text-gray-700 dark:text-gray-300">
-          MLOps engineer, content creator.
-        </p>
+        <p class="mt-6 text-gray-700 dark:text-gray-300">{BIOGRAPHY}</p>
         {
           SOCIALS.map((social: SocialNetwork) => (
             <a href={social.url} class="inline-block mt-6 mx-2">

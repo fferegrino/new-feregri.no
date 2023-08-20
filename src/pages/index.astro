@@ -6,9 +6,10 @@ import CallToAction from '../components/CallToAction.astro';
 import Features from '../components/Features.astro';
 import Stats from '../components/Stats.astro';
 import Testimonials from '../components/Testimonials.astro';
+import { BIOGRAPHY } from '../consts';
 ---
 
-<Layout title="Home">
+<Layout title="Antonio Feregrino" description={BIOGRAPHY}>
 	<main class="space-y-20 mb-40">
 		<HeroSection/>
 		<Features/>

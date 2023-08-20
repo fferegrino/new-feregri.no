@@ -20,7 +20,7 @@ const headingStyles = [
 ---
 
 
-<Layout title="Blog">
+<Layout title={title} description={description}>
 	<Container>
 
 
@@ -30,7 +30,7 @@ const headingStyles = [
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 				<div>
-					<div class="title">
+					<div class="title dark:text-white">
 						<div class="date">
 							<FormattedDate date={publishDate} />
 							{
@@ -45,7 +45,7 @@ const headingStyles = [
 						<a href="/blog">&#8592; Back to blog</a>
 						<hr class="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700"/>
 					</div>
-					<div class="prose prose-cactus max-w-none">
+					<div class="prose prose-cactus max-w-none dark:prose-invert">
 					<slot />
 				</div>
 				</div>

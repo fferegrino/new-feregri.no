@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = 'Astro Blog';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
-
+export const BIOGRAPHY = 'MLOps Engineer - once data scientist and always a software engineer. Educator and content creator.'
 
 
 export type SocialNetwork = {
