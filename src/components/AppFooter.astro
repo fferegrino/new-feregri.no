@@ -1,52 +1,47 @@
 ---
 import Container from "./Container.astro";
-import { SOCIALS, SocialNetwork } from "../consts";
+import { SOCIALS, CREDITS,Credits, SocialNetwork } from "../consts";
 ---
 
 <footer class="pb-10 md:pb-10">
   <Container>
-    <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
+    <div class="m-auto w-10/12">
       <div class="flex flex-wrap items-center justify-between md:flex-nowrap">
         <div
           class="flex w-full justify-center space-x-12 text-gray-600 dark:text-gray-300 sm:w-7/12 md:justify-start"
         >
-          <ul class="space-y-8">
-            <li><a href="#" class="transition hover:text-primary">Home</a></li>
-          </ul>
-          <ul role="list" class="space-y-8">
-            {
-              SOCIALS.map((social: SocialNetwork) => (
-                <li>
-                  <a
-                    href={social.url}
-                    class="flex items-center space-x-3 transition hover:text-primary"
-                  >
-                    <i class={`fab fa-${social.icon} text-2xl`} />
-                    <span>{social.name}</span>
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
+        <p>Antonio Feregrino Bolaños</p>
+        </div>
+        <div
+          class="m-auto mt-16 w-10/12 text-center sm:mt-auto sm:w-5/12 sm:text-left"
+        >
+        {
+          SOCIALS.map((social: SocialNetwork) => (
+            <a href={social.url} class="inline-block mx-2">
+              <i
+                class={`fab fa-${social.icon} text-2xl text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors duration-300`}
+              />
+              <span class="sr-only">{social.name}</span>
+            </a>
+          ))
+        }
         </div>
         <div
           class="m-auto mt-16 w-10/12 space-y-6 text-center sm:mt-auto sm:w-5/12 sm:text-left"
         >
-          <ul role="list" class="space-y-8">
+        <ul role="list" class="">
+        {
+          CREDITS.map((credit: Credits) => (
             <li>
               <a
-                href="https://preview.tailus.io/astrolus-free/"
+                href={credit.url}
                 target="_blank"
-                class="font-medium">Base theme by Tailus Blocks</a
+                class="font-medium  text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white ">{credit.text}</a
               >
             </li>
-            <li>
-              <a
-                href="https://www.flaticon.com/authors/special/lineal-color?author_id=1&type=standard"
-                class="font-medium">Some icons by Freepik</a
-              >
-            </li>
-          </ul>
+          ))  
+        }
+        </ul>
         </div>
       </div>
     </div>

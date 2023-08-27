@@ -20,7 +20,7 @@ export const SOCIALS = [
     },
     {
         name: "GitHub",
-        url: "",
+        url: "https://github.com/fferegrino",
         icon: "github"
     },
     {
@@ -34,3 +34,22 @@ export const SOCIALS = [
         icon: "youtube"
     }
 ];
+
+
+export type Credits = {
+    text: string,
+    url: string
+};
+
+export const CREDITS = [
+{
+    "text": "Base theme by Tailus Blocks",
+    "url": "https://preview.tailus.io/astrolus-free/"
+},
+{
+    "text": "Some icons by Freepik",
+    "url": "https://www.flaticon.com/authors/special/lineal-color?author_id=1&type=standard"    
+}
+];
+
+
